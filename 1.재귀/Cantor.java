@@ -6,12 +6,14 @@ public class Cantor{
         Scanner sc=new Scanner(System.in);//입력받을 sc선언
         Cantor ct=new Cantor();//ct는 Cantor의 CantorFunc을 사용하기 위함
 
-        int N=get_3_Squared(sc.nextInt());//x을 입력받고 3의 x제곱수 리턴받아 N에 저장
+        while (sc.hasNextInt()) {
+            int N=get_3_Squared(sc.nextInt());//x을 입력받고 3의 x제곱수 리턴받아 N에 저장
         
-        String Cantor=ct.CantorFunc("-".repeat(N), N, N);//N만큼 "-"로 된 문자열 저장
+            String CantorStr=ct.CantorFunc("-".repeat(N), N, N);//N만큼 "-"로 된 문자열 저장
 
-        System.out.println(Cantor);
+            System.out.println(CantorStr);
         }
+    }
 
     public static int get_3_Squared(int number) {
 		int result=1;

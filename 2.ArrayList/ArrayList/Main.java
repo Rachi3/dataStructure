@@ -7,6 +7,7 @@ public class Main {
         list.addLast(1);
         list.addFirst("hi");
         list.add(1,"add");
-        list.printList();
+        list.add(4,"add");
+        //list.printList();
     }
 }

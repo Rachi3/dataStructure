@@ -12,9 +12,10 @@ public class ArrayList {
    }
 
    public boolean add(int idx,Object data){
-        if (idx>nowIdx)
-            return false;//만약 현재까지 저장된 개수보다 큰 주소에 더하고 싶다하면 오류발생
-        
+        if (idx>nowIdx){
+           System.out.println("Wrong index!");
+           return false;//만약 현재까지 저장된 개수보다 큰 주소에 더하고 싶다하면 오류발생
+        }
         pushData(idx);
         obj[idx]=data;
         //미는 작업 필요함 이건 처음에 대입할때도 필요하니 매소드로 따로 구현

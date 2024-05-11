@@ -27,7 +27,7 @@ public class ArrayTest{
             int i =iterator.next();
 
             System.out.println(i);
-`
+
             if(i == 1)
                 iterator.remove();
         }
@@ -38,5 +38,9 @@ public class ArrayTest{
         }
 
         System.out.println(list);
+
+        Object o = 1;
+
+        System.out.println(o);
     }
 }

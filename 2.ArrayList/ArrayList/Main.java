@@ -5,7 +5,8 @@ public class Main {
         ArrayList list=new ArrayList();
 
         list.addLast(1);
-
-        System.out.println(list);
+        list.addFirst("hi");
+        list.add(1,"add");
+        list.printList();
     }
 }

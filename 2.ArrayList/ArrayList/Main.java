@@ -8,6 +8,8 @@ public class Main {
         list.addFirst("hi");
         list.add(1,"add");
         list.add(4,"add");
+
+        System.out.println(list);
         //list.printList();
     }
 }

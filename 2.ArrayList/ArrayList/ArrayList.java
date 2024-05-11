@@ -42,8 +42,16 @@ public class ArrayList {
         return true;
    }
 
-   public void printList(){
-        for(int i=0;i<nowIdx;i++)
-            System.out.println(obj[i]);//wrapper class로 인해서 자동으로 알맞은 출력방식으로 toString이 오버라이딩됌.
+   @Override
+
+   public String toString(){
+     String str="[";
+
+     for(int i=0;i<nowIdx;i++)
+     {
+          str+=obj[i];//String으로 언박싱
+          str+=',';
+     }
+     return str+"]";
    }
 }

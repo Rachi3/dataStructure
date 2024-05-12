@@ -100,15 +100,15 @@ public class ArrayList {
    }
 
    //data로 찾기
-   public Object indexOf(Object data){
+   public int indexOf(Object data){
      for(int i=0;i<nowIdx;i++)
           if(obj[i].equals(data))//==을 써도 문제는 현재 안생기지만 언젠가는 생길수 있기에 equals사용함
                return i;
      
      System.out.printf("현재 %s는 저장되어 있지 않습니다",data.toString());
-     return null;
+     return -1;
    }
 
-   public int sizeOf(){ return nowIdx;}//현재 저장된 data의 개수 리턴
+   public int sizeOf(){return nowIdx;}//현재 저장된 data의 개수 리턴
 
 }

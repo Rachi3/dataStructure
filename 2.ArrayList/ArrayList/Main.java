@@ -8,16 +8,10 @@ public class Main {
         list.addFirst("hi");
         list.add(1,"add");
         list.add(4,"add");
+        list.addLast("Last");
 
-        System.out.println(list);
-
-        System.out.println(list.removeLast());
-        System.out.println(list);
-        list.remove("hi");
-        System.out.println(list);
-        list.removeFisrt();
-
-        System.out.println(list);
-
+        System.out.println(list);     
+        
+        System.out.println(list.indexOf(1));
     }
 }

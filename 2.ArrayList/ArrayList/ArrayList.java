@@ -45,9 +45,8 @@ public class ArrayList {
      return str+"]";
    }
 
+
    //remove 관련 매소드 생성
-
-
    public Object remove(int idx){
      if(nowIdx==0)
      {
@@ -72,6 +71,7 @@ public class ArrayList {
      return tmp;
    }
 
+   //데이터로 찾기
    public Object remove(Object data){
      for(int i=0;i<nowIdx;i++)
           if(obj[i]==data)
@@ -87,4 +87,28 @@ public class ArrayList {
    public Object removeLast(){
      return remove(nowIdx-1);//마지막 데이터 삭제
    }
+
+   //주소로 찾기
+   public Object get(int idx){
+     if(!(idx>=0&&idx<nowIdx))
+     {
+          System.out.println("현재 찾으시는 인덱스에 저장된 데이터는 존재하지 않습니다.");
+          return null;
+     }
+
+     return obj[idx];
+   }
+
+   //data로 찾기
+   public Object indexOf(Object data){
+     for(int i=0;i<nowIdx;i++)
+          if(obj[i].equals(data))//==을 써도 문제는 현재 안생기지만 언젠가는 생길수 있기에 equals사용함
+               return i;
+     
+     System.out.printf("현재 %s는 저장되어 있지 않습니다",data.toString());
+     return null;
+   }
+
+   public int sizeOf(){ return nowIdx;}//현재 저장된 data의 개수 리턴
+
 }

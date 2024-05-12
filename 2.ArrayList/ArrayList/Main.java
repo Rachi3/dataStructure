@@ -10,6 +10,14 @@ public class Main {
         list.add(4,"add");
 
         System.out.println(list);
-        //list.printList();
+
+        System.out.println(list.removeLast());
+        System.out.println(list);
+        list.remove("hi");
+        System.out.println(list);
+        list.removeFisrt();
+
+        System.out.println(list);
+
     }
 }

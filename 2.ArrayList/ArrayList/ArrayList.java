@@ -118,6 +118,31 @@ public class ArrayList {
    }
 
    private class ListIterator{
+     private int IterIdx=0;
+     public boolean hasNext(){
+          // if(obj[idx+1]==null)
+          //      return false;
 
+          return sizeOf()>IterIdx;
+     }
+
+     public Object Next(){
+          return obj[IterIdx++];
+     }
+
+     public boolean hasPrev(){
+          return IterIdx>0;
+     }
+
+     public Object Prev(){
+          return obj[--IterIdx];
+     }
+
+     public boolean add(Object data){
+          return ArrayList.this.add(IterIdx, data);//외부 클래스의 add를 사용할 것이기 때문에 ArrayList.this 라고 명시
+     }
+     public boolean remove(){
+          return ArrayList.this.remove(--IterIdx);
+     }
    }
 }

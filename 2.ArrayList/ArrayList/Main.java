@@ -10,6 +10,10 @@ public class Main {
         list.add(4,"add");
         list.addLast("Last");
 
+        ArrayList.ListIterator li = list.ListIterator();
+        //반복문 대신 반복작업을 하기위해 Iterator 객체 사용함
+        //이 객체는 ArrayList안에 존재하는 또다른 클래스
+        //list객체안에 ListIterator()매소드 호출하여 반환받음
         System.out.println(list);     
         
         System.out.println(list.indexOf(1));

@@ -117,7 +117,7 @@ public class ArrayList {
      return new ListIterator();
    }
 
-   private class ListIterator{
+   class ListIterator{
      private int IterIdx=0;
      public boolean hasNext(){
           // if(obj[idx+1]==null)
@@ -141,7 +141,7 @@ public class ArrayList {
      public boolean add(Object data){
           return ArrayList.this.add(IterIdx, data);//외부 클래스의 add를 사용할 것이기 때문에 ArrayList.this 라고 명시
      }
-     public boolean remove(){
+     public Object remove(){
           return ArrayList.this.remove(--IterIdx);
      }
    }

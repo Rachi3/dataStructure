@@ -16,7 +16,7 @@ public class Main {
 
         cLinkedList.printAll();
 
-        cLinkedList.add(3,"어쩔티비");
+        cLinkedList.add(11,"어쩔티비");
         cLinkedList.printAll();
 
         

@@ -76,14 +76,29 @@ public class customLinkedList {
     }//i번째 노드 반환하기 
 
     public void add(int index,Object obj){
-        Node base=node(index);
-        Node newNode=new Node(obj);
+        if(index==0)
+            addFirst(obj);
+        else if(index==size)
+            addLast(obj);
+        else if(index<size&&index>0)
+        {
+            Node base=node(index);
+            Node newNode=new Node(obj);
+        
+            if(base!=null)
+            { 
+            base.prevNode.nextNode=newNode;
+            newNode.prevNode=base.prevNode;//another Node부터 연결
 
-        base.prevNode.nextNode=newNode;
-        newNode.prevNode=base.prevNode;//another Node부터 연결
-
-        base.prevNode=newNode;
-        newNode.nextNode=base;
+            base.prevNode=newNode;
+            newNode.nextNode=base;
+            }
+        }
+       else{
+        System.out.println("해당 인덱스는 존재하지 않습니다.");
+        return;
+       }
+    
     }
 
     public void printAll(){

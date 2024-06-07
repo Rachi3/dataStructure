@@ -63,10 +63,33 @@ public class customLinkedList {
         size++;
     }
 
+    private Node node(int index){
+        if(index>size)
+            return null;
+
+        Node tmp=Head;
+
+        for(int i=0;i<=index;i++)
+            tmp=tmp.nextNode;
+
+        return tmp;
+    }//i번째 노드 반환하기 
+
+    public void add(int index,Object obj){
+        Node base=node(index);
+        Node newNode=new Node(obj);
+
+        base.prevNode.nextNode=newNode;
+        newNode.prevNode=base.prevNode;//another Node부터 연결
+
+        base.prevNode=newNode;
+        newNode.nextNode=base;
+    }
+
     public void printAll(){
         int i=0;
         for(Node tmp=Head.nextNode;tmp.nextNode!=null;tmp=tmp.nextNode,i++)
-            System.out.println(i+"번째 데이터"+tmp.data);
+            System.out.println(i+" 번째 데이터 : "+tmp.data);
     }//임시로 출력 매소드
 
     //remove 기능들 구현

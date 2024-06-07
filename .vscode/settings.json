@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "2.ArrayList",
         "1.재귀",
-        "2.ArrayList"
+        "3.LinkedList"
     ]
 }

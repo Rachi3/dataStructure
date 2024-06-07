@@ -15,6 +15,11 @@ public class Main {
         cLinkedList.addLast(5);
 
         cLinkedList.printAll();
+
+        cLinkedList.add(3,"어쩔티비");
+        cLinkedList.printAll();
+
+        
     }
     
    

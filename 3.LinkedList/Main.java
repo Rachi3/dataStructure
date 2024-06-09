@@ -14,11 +14,11 @@ public class Main {
         cLinkedList.addLast(4);
         cLinkedList.addLast(5);
 
-        cLinkedList.printAll();
-
-        cLinkedList.add(11,"어쩔티비");
-        cLinkedList.printAll();
-
+        System.out.println(cLinkedList.removeFisrt());
+        System.out.println(cLinkedList.removeLast());
+        System.out.println(cLinkedList.removeLast());
+        System.out.println(cLinkedList.remove(2));
+        System.out.println(cLinkedList);
         
     }
     

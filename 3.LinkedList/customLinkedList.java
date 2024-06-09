@@ -64,7 +64,7 @@ public class customLinkedList {
     }
 
     private Node node(int index){
-        if(index>size)
+        if(index>size||index<0)
             return null;
 
         Node tmp=Head;
@@ -80,33 +80,81 @@ public class customLinkedList {
             addFirst(obj);
         else if(index==size)
             addLast(obj);
-        else if(index<size&&index>0)
+        else
         {
             Node base=node(index);
             Node newNode=new Node(obj);
         
-            if(base!=null)
-            { 
+            
             base.prevNode.nextNode=newNode;
             newNode.prevNode=base.prevNode;//another Node부터 연결
 
             base.prevNode=newNode;
             newNode.nextNode=base;
-            }
+            
+            size++;
         }
-       else{
-        System.out.println("해당 인덱스는 존재하지 않습니다.");
-        return;
-       }
+       
     
     }
 
-    public void printAll(){
+    @Override
+    public String toString(){
+        String str="{\n";
         int i=0;
-        for(Node tmp=Head.nextNode;tmp.nextNode!=null;tmp=tmp.nextNode,i++)
-            System.out.println(i+" 번째 데이터 : "+tmp.data);
-    }//임시로 출력 매소드
 
+        for(Node tmp=Head.nextNode;tmp!=Tail;tmp=tmp.nextNode,i++)
+            str+=String.format("[%d 번째 노드의 데이터 : %s]\n",i,tmp.data);
+        
+            str+="}";
+
+        return str;
+    }
+        
+    
+    public Node removeFisrt(){
+        if(size==0)
+            return null;
+
+        Node tmp=Head.nextNode;
+
+        Head.nextNode=tmp.nextNode;
+        tmp.nextNode.prevNode=Head;
+        size--;
+        return tmp;
+    }
+
+    public Node removeLast(){
+        if(size==0)
+            return null;
+
+        Node tmp=Tail.prevNode;
+
+        Tail.prevNode=tmp.prevNode;
+        tmp.prevNode.nextNode=Tail;
+        size--;
+        return tmp;
+    }
+
+
+    public Node remove(int index){
+        if(index==size)
+            return removeFisrt();
+        else if(index==size)
+            return removeLast();
+        else{
+            Node tmp=Head.nextNode;
+            for(int i=0;i<index;i++)
+                tmp=tmp.nextNode;
+
+            tmp.prevNode.nextNode=tmp.nextNode;
+            tmp.nextNode.prevNode=tmp.prevNode;
+
+            size--;
+
+            return tmp;
+        }
+    }
     //remove 기능들 구현
 
     //모든 변수 조회 기능 구현

@@ -1,4 +1,6 @@
+import java.util.ListIterator;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class customLinkedList {
     private Node Head;
@@ -157,8 +159,103 @@ public class customLinkedList {
     }
     //remove 기능들 구현
 
-    //모든 변수 조회 기능 구현
+    public int size(){
+        return size;
+    }
 
-    //특정 변수 찾기 기능 구현
+    public boolean contains(Object obj){
+        for(Node tmp=Head;tmp!=Tail;tmp=tmp.nextNode)
+            if(tmp.data==obj)
+                return true;
+
+        return false;
+    }
+
+    public Object get(int idx){
+        Node tmp=node(idx);
+        return tmp.data;
+    }
+
+    public int indexOf(Object data){
+        int i=0;
+        for(Node tmp=Head.nextNode;tmp!=Tail;tmp=tmp.nextNode,i++){
+            if(tmp.data==data)
+                return i;
+        }
+
+        return -1;
+    }
+
+    public LinkedIterator LinkedIterator(){
+     return new LinkedIterator();
+   }
+
+    //이터레이터 구현
+
+    class LinkedIterator{
+        Node iteratorNode;
+
+        LinkedIterator(){
+            iteratorNode=Head;
+        }
+
+        public boolean hasNext(){
+            if(iteratorNode.nextNode!=null)
+                return true;
+
+            return false;
+        }
+
+        public boolean hasPrev(){
+            if(iteratorNode.prevNode!=null)
+                return true;
+
+            return false;
+        }
+
+        public Object next(){
+            
+            iteratorNode=iteratorNode.nextNode;
+
+            return iteratorNode.data;
+        }
+
+        public Object prev(){
+            Node tmp=iteratorNode;
+            iteratorNode=iteratorNode.prevNode;
+
+            return tmp.data;
+        }
+
+        public void add(Object obj){
+            Node newNode=new Node(obj);
+
+            iteratorNode.prevNode.nextNode=newNode;
+            newNode.prevNode=iteratorNode.prevNode;
+
+
+            iteratorNode.prevNode=newNode;
+            newNode.nextNode=iteratorNode;
+
+            iteratorNode=iteratorNode.prevNode;
+            size++;
+        }
+
+        public Object remove(){
+            Node tmp=iteratorNode;
+
+            iteratorNode.prevNode.nextNode=iteratorNode.nextNode;
+            iteratorNode.nextNode.prevNode=iteratorNode.prevNode;
+
+            iteratorNode=iteratorNode.nextNode;
+
+            tmp.nextNode=null;
+            tmp.prevNode=null;
+
+            return tmp;
+        }
+    }
+
+    
     
 }

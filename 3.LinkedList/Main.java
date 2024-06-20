@@ -1,3 +1,5 @@
+
+
 public class Main {
     public static void main(String[] args) {
         customLinkedList cLinkedList=new customLinkedList();
@@ -14,12 +16,20 @@ public class Main {
         cLinkedList.addLast(4);
         cLinkedList.addLast(5);
 
-        System.out.println(cLinkedList.removeFisrt());
-        System.out.println(cLinkedList.removeLast());
-        System.out.println(cLinkedList.removeLast());
-        System.out.println(cLinkedList.remove(2));
-        System.out.println(cLinkedList);
         
+        
+        customLinkedList.LinkedIterator li=cLinkedList.LinkedIterator();
+
+        while(li.hasNext())
+        {
+            System.out.println(li.next());
+
+            
+            
+        }
+        li.prev();
+        li.remove();
+        System.out.println(cLinkedList);
     }
     
    

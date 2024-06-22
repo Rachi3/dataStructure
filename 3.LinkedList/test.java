@@ -1,6 +1,6 @@
 
 
-public class Main {
+public class test {
     public static void main(String[] args) {
         customLinkedList cLinkedList=new customLinkedList();
 

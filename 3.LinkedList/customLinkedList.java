@@ -1,6 +1,5 @@
-import java.util.ListIterator;
+import java.util.*;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class customLinkedList {
     private Node Head;
@@ -66,7 +65,7 @@ public class customLinkedList {
     }
 
     private Node node(int index){
-        if(index>size||index<0)
+        if(index>=size||index<0)
             return null;
 
         Node tmp=Head;

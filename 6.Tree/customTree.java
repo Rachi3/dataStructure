@@ -63,9 +63,6 @@ public class customTree {
         return max + 1;
     }
     private TreeNode findNode(TreeNode node,int parentValue){
-        if(parentValue==0)
-            return root;
-
         if(node==null)
             return null;
 

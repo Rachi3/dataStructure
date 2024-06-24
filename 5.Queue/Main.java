@@ -4,7 +4,7 @@ public class Main {
 
         queue.offer(15);
         
-
+        
         System.out.println(queue.poll());
         System.out.println(queue.isEmpty());
     }

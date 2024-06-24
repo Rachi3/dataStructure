@@ -11,6 +11,16 @@ public class Main {
 
         
        
-        System.out.println(T.height(2));
+        System.out.println(T.height(4));
+        System.out.println(T.child(1));
+
+        System.out.println("preOrder");
+        T.preOrder(T.root);
+
+        System.out.println("postOrder");
+        T.postOrder(T.root);
+
+        System.out.println("levelOrder");
+        T.levelOrder(T.root);
     }
 }
